@@ -1,0 +1,15 @@
+Aluno: Eduardo Dalmás Faé (334087)
+
+Explicação dos arquivos:
+Glued.pddl: Domínio do Glued 15-Puzzle.
+Glued01.pddl: Problema do Glued 15-Puzzle com a tile 6 glued.
+
+Cheating.pddl: Domínio do Cheating 15-Puzzle onde mais de uma peça pode ser removida ao mesmo tempo.
+Cheating01.pddl: Problema do Cheating 15-Puzzle onde mais de uma peça pode ser removida ao mesmo tempo.
+
+Cheating_once.pddl: Domínio do Cheating 15-Puzzle onde apenas uma peça pode ser removida por vez.
+Cheating_once01.pddl: Problema do Cheating 15-Puzzle onde apenas uma peça pode ser removida por vez.
+
+
+Explicação dos resultados:
+Locais na tabela marcados com '-' representam instâncias que não concluíram dentro dos limites requisitados.
