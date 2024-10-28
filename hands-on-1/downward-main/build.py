@@ -25,8 +25,8 @@ if os.name == "posix":
         DEFAULT_MAKE_PARAMETERS.append('-j{}'.format(num_cpus))
     CMAKE_GENERATOR = "Unix Makefiles"
 elif os.name == "nt":
-    MAKE = "nmake"
-    CMAKE_GENERATOR = "NMake Makefiles"
+    MAKE = "make"
+    CMAKE_GENERATOR = "MinGW Makefiles"
 else:
     print("Unsupported OS: " + os.name)
     sys.exit(1)
