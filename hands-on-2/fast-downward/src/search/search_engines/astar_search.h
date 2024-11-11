@@ -33,9 +33,9 @@ struct AStarSearchNode {
         bool operator()(const AStarSearchNode *lhs,
                         const AStarSearchNode *rhs) const {
             // insert your code here
-            if((lhs->g + lhs->h) > (rhs->g + rhs->h))
-                return true;
-            return lhs->h > rhs->h;
+            auto lhs_f = lhs->g + lhs->h;
+            auto rhs_f = rhs->g + rhs->h;
+            return (lhs_f > rhs_f) || ((lhs_f == rhs_f) && (lhs->h > rhs->h));
         }
     };
 };
@@ -55,7 +55,9 @@ struct OpenList {
 
     AStarSearchNode *pop_min() {
         // insert your code here
-        return open_list.pop();
+        auto node = open_list.top();
+        open_list.pop();
+        return node;
     }
 
     bool empty() const {

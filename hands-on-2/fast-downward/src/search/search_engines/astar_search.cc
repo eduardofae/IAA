@@ -105,14 +105,15 @@ void AStarSearch::search() {
         open.insert(make_root_node());
     while(!open.empty()){
         auto n = open.pop_min();
-        if(distances.contains(n->state) == NULL || g(n) < distances[n->state]){
+        if(!distances.contains(n->state) || g(n) < distances[n->state]){
             distances[n->state] = g(n);
             if(is_goal(n->state)){
                 extract_solution(n);
+                break;
             }
             for(auto succ : get_successors(n->state)){
                 if(h(succ.second) < INT_MAX){
-                    new_n = make_node(n, succ.first, succ.second);
+                    auto new_n = make_node(n, succ.first, succ.second);
                     open.insert(new_n);
                 }
             }
